@@ -5,8 +5,9 @@ import { Server } from "colyseus";
 import { monitor } from "@colyseus/monitor";
 // import socialRoutes from "@colyseus/social/express"
 
-import { MyRoom } from "./rooms/MyRoom";
+import { BingoRoom } from "./rooms/BingoRoom";
 
+const host = '192.168.0.4'
 const port = Number(process.env.PORT || 2567);
 const app = express()
 
@@ -19,7 +20,7 @@ const gameServer = new Server({
 });
 
 // register your room handlers
-gameServer.define('my_room', MyRoom);
+gameServer.define('bingo_room', BingoRoom);
 
 /**
  * Register @colyseus/social routes
@@ -32,5 +33,5 @@ gameServer.define('my_room', MyRoom);
 // register colyseus monitor AFTER registering your room handlers
 app.use("/colyseus", monitor());
 
-gameServer.listen(port);
-console.log(`Listening on ws://localhost:${ port }`)
+gameServer.listen(port, host);
+console.log(`Listening on ws://${host}:${ port }`)
