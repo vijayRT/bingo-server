@@ -6,6 +6,7 @@ import { monitor } from "@colyseus/monitor";
 // import socialRoutes from "@colyseus/social/express"
 
 import { BingoRoom } from "./rooms/BingoRoom";
+import { retrieveUser } from "./api/retrieveUser";
 
 const host = '192.168.0.4'
 const port = Number(process.env.PORT || 2567);
@@ -21,16 +22,7 @@ const gameServer = new Server({
 
 // register your room handlers
 gameServer.define('bingo_room', BingoRoom);
-
-/**
- * Register @colyseus/social routes
- *
- * - uncomment if you want to use default authentication (https://docs.colyseus.io/server/authentication/)
- * - also uncomment the import statement
- */
-// app.use("/", socialRoutes);
-
-// register colyseus monitor AFTER registering your room handlers
+app.post("/signin", retrieveUser)
 app.use("/colyseus", monitor());
 
 gameServer.listen(port, host);

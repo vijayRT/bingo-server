@@ -6,17 +6,15 @@ export class BingoRoom extends Room<BingoRoomState> {
     onCreate(options: any) {
         this.setState(new BingoRoomState());
         this.onMessage("numberPress", (client, message) => {
-            this.state.numbersPressed.push(message.numberPressed)
-            let player: PlayerInterface = this.state.players[client.sessionId]
-            player.board.cells[message.numberIndex].struck = true
+            console.log(JSON.stringify(message, undefined, 4))
         });
         this.onMessage("bingoPress", (client, message) => {
-            
+            console.log(JSON.stringify(message, undefined, 4))
         })
     }
 
     onJoin(client: Client, options: any) {
-        this.state.players[client.sessionId] = new Player(client.sessionId)
+        // this.state.players[client.sessionId] = new Player(client.sessionId)
     }
 
     onLeave(client: Client, consented: boolean) {
