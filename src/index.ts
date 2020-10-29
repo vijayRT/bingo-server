@@ -1,3 +1,4 @@
+require('dotenv').config()
 import http from "http";
 import express from "express";
 import cors from "cors";
@@ -8,7 +9,7 @@ import { monitor } from "@colyseus/monitor";
 import { BingoRoom } from "./rooms/BingoRoom";
 import userRouter from './api/users'
 
-const host = '192.168.0.4'
+const host = process.env.HOST
 const port = Number(process.env.PORT || 2567);
 const app = express()
 
