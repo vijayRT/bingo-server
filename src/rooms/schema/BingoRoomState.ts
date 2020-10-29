@@ -2,7 +2,7 @@ import { Schema, type, MapSchema, ArraySchema } from "@colyseus/schema";
 import { Player } from "./Player";
 
 export class BingoRoomState extends Schema {
-    @type([Player])
+    @type({map: Player})
     players: MapSchema<Player>
 
     @type(["int16"])
