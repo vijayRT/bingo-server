@@ -33,7 +33,7 @@
   resolved "https://registry.yarnpkg.com/@colyseus/schema/-/schema-0.5.41.tgz#0bb3d3653e2b9170fef8732835cc3db2f0d8e8a0"
   integrity sha512-yJXSK6S1bAyWTKuxfNQ2u3KAVHjornnDg8hvbX7T+ZfX8BiYGBTbiv5JIUG9bYXbMRqQnQYa5QlPHjU30R7rJQ==
 
-"@colyseus/schema@^1.0.0":
+"@colyseus/schema@^1.0.0", "@colyseus/schema@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@colyseus/schema/-/schema-1.0.1.tgz#cf554370597372366cbc06e4544e609e9e421052"
   integrity sha512-P5+PZ9zBEe+Ykw5W8Eo01BeWLQOziaM4lRTpS40R6/o+zH4gmOPzMaWhQlVoVHw0GEAqOfwUtbk9u7qPFbwtyQ==
@@ -934,6 +934,11 @@ dot-prop@^5.2.0:
   integrity sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==
   dependencies:
     is-obj "^2.0.0"
+
+dotenv@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
+  integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
 
 double-ended-queue@^2.1.0-0:
   version "2.1.0-0"

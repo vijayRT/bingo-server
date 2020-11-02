@@ -25,9 +25,11 @@
   },
   "dependencies": {
     "@colyseus/monitor": "^0.12.2",
+    "@colyseus/schema": "^1.0.1",
     "@colyseus/social": "^0.10.9",
     "colyseus": "^0.14.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
     "firebase-admin": "^9.3.0"
