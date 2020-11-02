@@ -5,7 +5,6 @@ import { Player, PlayerInterface } from "./schema/Player";
 
 export class BingoRoom extends Room<BingoRoomState> {
     onCreate(options: any) {
-        console.log("Hi Im here");
         this.setState(new BingoRoomState());
         this.onMessage("numberPress", (client, message) => {
             console.log(JSON.stringify(message, undefined, 4));
@@ -19,11 +18,13 @@ export class BingoRoom extends Room<BingoRoomState> {
         const email: string = options.email;
         const joinedPlayer = new Player(client.sessionId, email);
         await joinedPlayer.populateProfileDetails();
-        this.state.players.set(email, joinedPlayer);
+        this.state.players.set(client.sessionId, joinedPlayer);
         this.broadcast("playerJoined");
     }
 
-    onLeave(client: Client, consented: boolean) {}
+    onLeave(client: Client, consented: boolean) {
+        this.state.players.delete(client.sessionId)
+    }
 
     onDispose() {}
 }
